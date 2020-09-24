@@ -1,0 +1,30 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#add_item_submit {
+    float: right;
+    padding-right: 5%;
+}
+
+a.btn-success {
+    width: 110px;
+    margin-top: 10%
+}
+a.btn-warning{
+    width: 110px;
+    margin-top: 1%
+}
+
+#wrapper {
+    display: flex;
+
+    #item {
+        width: 400px;
+        background: lightblue;
+    }
+    #voting {
+        width: 240px;
+        background: lightgreen;
+    }
+}

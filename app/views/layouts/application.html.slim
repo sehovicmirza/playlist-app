@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    script src="http://www.youtube.com/player_api"
+    title
+      | VideoPlaylist
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    p.alert
+      = alert
+    - if user_signed_in?
+      = link_to  "Sign Out", destroy_user_session_path, method: :delete, id: "sign_out"
+    = yield

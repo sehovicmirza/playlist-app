@@ -1,0 +1,35 @@
+// Place all the styles related to the playlists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#playlist_container {
+    padding-top: 2%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#my_playlists_list {
+    padding-left: 5%;
+    width: 30%;
+    .btn {
+        float: right;
+    }
+}
+#following_list {
+    padding-left: 5%;
+}
+#playlist_name {
+    font-size: 36px;
+}
+
+#unfollow_btn, #follow_btn{
+    margin-left: 22px;
+}
+
+#add_item_btn {
+    margin-left: 320px;
+}
+
+hr {
+    width: 640px;
+}

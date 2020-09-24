@@ -1,0 +1,16 @@
+#wrapper
+  #item
+    p
+      = item.title
+    img src=item.thumbnail_url class="yt_thumbnail" data-uid=item.uid data-id=item.id
+    p 
+      |
+        Votes: 
+      = item.rank
+      <br><br>
+  #voting
+    - if user_signed_in?
+      = link_to "Add vote ", playlist_item_votes_path(@playlist, {:item_id => item.id}), method: :post, class: "btn btn-success"
+      <br>
+      = link_to "Remove vote", playlist_item_votes_path(@playlist, {:item_id => item.id}), method: :delete, class: "btn btn-warning"
+hr align="left"

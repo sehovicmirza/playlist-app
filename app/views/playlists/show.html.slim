@@ -1,0 +1,32 @@
+#playlist_container
+  p#notice
+    = notice
+  p#playlist_name
+    strong
+      = @playlist.name
+
+    - following = current_user.following_playlists.include?(@playlist)
+    - if following
+      button type="button" class="btn btn-default" id="unfollow_btn" disabled="true" Unfollow
+      button type="button" class="btn btn-info btn-lg" id="add_item_btn" data-toggle="modal" data-target="#addItemModal" Add Item
+    - else
+      = link_to 'Follow', playlist_subscriptions_path(@playlist.id), method: :post, class: "btn btn-default", id: "follow_btn"
+  br
+  #player
+  #items_wrapper
+    = render  @playlist.items.ordered_by_votes
+
+  = link_to 'Back', playlists_path
+
+  /  MODAL - Add Item
+  .modal.fade id="addItemModal" role='dialog'
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          h4.modal-title = "Add new YouTube video"
+        .modal-body
+          =  form_for([@playlist, @playlist.items.build]) do 
+              input type="text" name="new_item_link" class="form-control" placeholder="http://www.youtube.com/1a2b3c4d5fA" id="new_item_link"
+        .modal-footer
+          button.btn.btn-danger type='button' data-dismiss='modal' Close
+          button.btn.btn-primary type='button' id="add_item_submit" Save

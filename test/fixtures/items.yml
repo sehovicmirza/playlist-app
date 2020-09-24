@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ytlink: MyString
+  votes: 1
+  playlist_id: 
+
+two:
+  ytlink: MyString
+  votes: 1
+  playlist_id: 
