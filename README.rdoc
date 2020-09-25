@@ -1,28 +1,84 @@
-== README
+# Project Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Playlist App Implementation, please do not spend more than 24 hours on this implementation, if you don't finish everything, please write a list of features you didn't have time to work on. As a clarification, we are not evaluating the completion of the tasks, but the quality of the code and how you analyze the requirements, so please do not worry if you don't finish everything.
 
-Things you may want to cover:
+Part 1 - Users:
 
-* Ruby version
+The app have users, a user can register with a simple form and have the following attributes, username, email, password.
 
-* System dependencies
+ 
 
-* Configuration
+Part 2 - Playlist:
 
-* Database creation
+A user can create a playlist, playlists have a name and they are not unique, but a unique url for each playlist should be created, this unique url should be displayed on the playlist edit page so the user can send it to other people.
 
-* Database initialization
+Playlists have a public url, where the name cannot be edited.
 
-* How to run the test suite
+ 
 
-* Services (job queues, cache servers, search engines, etc.)
+Part 3 - Join Playlist: 
 
-* Deployment instructions
+Users can join to a playlist by accessing through the unique url, and clicking on the "follow playlist", once a user follows the playlist, it is displayed in a list of playlists on the user edit page.
 
-* ...
+Once a user join a Playlist, a button to add items is displayed.
 
+ 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Part 4 - Adding Items to a Playlist:
+
+Users can add youtube links by clicking on the Add Item button, a modal is shown with a textbox, once the user saves the item, the system has to validate it's a valid youtube link. If it's not, it has to display a toast error, if the link is valid, the item is displayed with the thumbnail of the video to the list of items.
+
+ 
+
+The list of items of the play list, is a list of youtube links added to the playlist, it displays the thumbnail of the video, the name and the a count of votes, each video also have a button to vote and another to remove the vote. Users can vote once per video, but they can remove their vote, and vote again if they want.
+
+ 
+
+Part 5 - Voting:
+
+The playlist should be ordered based on the amount of votes, so if a item is voted and is the highest voted item, it has to go to the top of the playlist. Items with the same amount of votes should be ordered by added date.
+
+ 
+
+Part 6 - Video Reproduction:
+
+The playlist page also has a video player and it should play the video, once the video finishes, the next video is started. 
+
+Once a video finishes, the next one starts and the finished video is removed from the playlist.
+
+ 
+
+Part 7 - Nice to Have:
+
+The video should be in sync between the different clients, so if a user loads the page, it should start the video at the same minute other users are watching it. (this is not required but it's a nice to have)
+
+ 
+
+General Comments:
+
+Votes should be reflected on the different clients, so if a user votes for a video, that vote should be reflected on the other users browsers.
+
+When a video is added, it should also be added on the other users browsers.
+
+When a video is removed, it should also be removed on the other users browsers.
+
+Use ajax at your discression, please identify sections that you consider should be done with Ajax and implement it.
+
+Please use the following technologies:
+
+ - Coffee Script
+
+ - Slim
+
+ - Bootstrap
+
+ - Simple form
+
+ - Postgresql
+
+ - rails 4.1 or 4.2
+
+ - Devise
+
+ - Any other you think appropiate. 
+
